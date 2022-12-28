@@ -1,6 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netflix/application/bloc/downloads_bloc.dart';
 
 import 'package:netflix/core/colors/colors.dart';
 import 'package:netflix/core/constants.dart';
@@ -37,12 +39,12 @@ class Section2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      BlocProvider.of<DownloadsBloc>(context)
+          .add(DownloadsEvent.getDownloadsImage());
+    });
+
     final Size size = MediaQuery.of(context).size;
-    final List imageList = [
-      "https://www.themoviedb.org/t/p/w220_and_h330_face/jhdSPDlhswjN1r6O0pGP3ZvQgU8.jpg",
-      "https://www.themoviedb.org/t/p/w220_and_h330_face/jhdSPDlhswjN1r6O0pGP3ZvQgU8.jpg",
-      "https://www.themoviedb.org/t/p/w220_and_h330_face/jhdSPDlhswjN1r6O0pGP3ZvQgU8.jpg",
-    ];
 
     return Column(
       children: [
@@ -58,36 +60,45 @@ class Section2 extends StatelessWidget {
           textAlign: TextAlign.center,
           style: TextStyle(color: Colors.grey, fontSize: 16),
         ),
-        SizedBox(
-          width: size.width,
-          height: size.width,
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              CircleAvatar(
-                radius: size.width * 0.38,
-                backgroundColor: Colors.grey.withOpacity(0.5),
-              ),
-              DownloadsImageWidgets(
-                imageList: imageList[0],
-                margin: EdgeInsets.only(left: 180, top: 30),
-                size: Size(size.width * 0.35, size.width * 0.52),
-                angle: 24,
-              ),
-              DownloadsImageWidgets(
-                imageList: imageList[1],
-                margin: EdgeInsets.only(right: 180, top: 30),
-                angle: -24,
-                size: Size(size.width * 0.35, size.width * 0.52),
-              ),
-              DownloadsImageWidgets(
-                imageList: imageList[2],
-                margin: EdgeInsets.only(bottom: 15, top: 30),
-                size: Size(size.width * 0.4, size.width * 0.61),
-                radius: 8,
-              )
-            ],
-          ),
+        BlocBuilder<DownloadsBloc, DownloadsState>(
+          builder: (context, state) {
+            return state.isLoading
+                ? CircularProgressIndicator()
+                : SizedBox(
+                    width: size.width,
+                    height: size.width,
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        CircleAvatar(
+                          radius: size.width * 0.38,
+                          backgroundColor: Colors.grey.withOpacity(0.5),
+                        ),
+                        DownloadsImageWidgets(
+                          imageList:
+                              '$imageAppendurl${state.downloads[0].posterpath}',
+                          margin: EdgeInsets.only(left: 180, top: 30),
+                          size: Size(size.width * 0.35, size.width * 0.52),
+                          angle: 24,
+                        ),
+                        DownloadsImageWidgets(
+                          imageList:
+                              '$imageAppendurl${state.downloads[1].posterpath}',
+                          margin: EdgeInsets.only(right: 180, top: 30),
+                          angle: -24,
+                          size: Size(size.width * 0.35, size.width * 0.52),
+                        ),
+                        DownloadsImageWidgets(
+                          imageList:
+                              '$imageAppendurl${state.downloads[2].posterpath}',
+                          margin: EdgeInsets.only(bottom: 15, top: 30),
+                          size: Size(size.width * 0.4, size.width * 0.61),
+                          radius: 8,
+                        )
+                      ],
+                    ),
+                  );
+          },
         ),
       ],
     );
