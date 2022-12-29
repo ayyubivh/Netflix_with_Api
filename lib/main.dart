@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:netflix/application/bloc/downloads_bloc.dart';
+import 'package:netflix/application/search/search_bloc.dart';
 import 'package:netflix/core/colors/colors.dart';
 import 'package:netflix/presentation/main_page/screen_main_page.dart';
 
+import 'application/downloads/downloads_bloc.dart';
 import 'domain/di/injectable.dart';
 
 Future<void> main() async {
@@ -20,7 +21,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [BlocProvider(create: (context) => getIt<DownloadsBloc>())],
+      providers: [
+        BlocProvider(create: (context) => getIt<DownloadsBloc>()),
+        BlocProvider(create: (context) => getIt<SearchBloc>()),
+      ],
       child: MaterialApp(
         theme: ThemeData(
             appBarTheme: const AppBarTheme(backgroundColor: Colors.transparent),

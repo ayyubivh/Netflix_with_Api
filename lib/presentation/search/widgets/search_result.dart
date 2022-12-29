@@ -1,11 +1,9 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflix/core/constants.dart';
 import 'package:netflix/presentation/search/widgets/title.dart';
 
-const imageUrl =
-    "https://www.themoviedb.org/t/p/w220_and_h330_face/uJYYizSuA9Y3DCs0qS4qWvHfZg4.jpg";
+import '../../../application/search/search_bloc.dart';
 
 class SearchResultWidget extends StatelessWidget {
   const SearchResultWidget({super.key});
@@ -18,14 +16,21 @@ class SearchResultWidget extends StatelessWidget {
         SearchTextTitle(title: 'Movies & Tv'),
         kHeight,
         Expanded(
-          child: GridView.count(
-              shrinkWrap: true,
-              crossAxisSpacing: 8,
-              mainAxisSpacing: 8,
-              crossAxisCount: 3,
-              children: List.generate(20, (index) {
-                return MainCard();
-              })),
+          child: BlocBuilder<SearchBloc, SearchState>(
+            builder: (context, state) {
+              return GridView.count(
+                  shrinkWrap: true,
+                  crossAxisSpacing: 8,
+                  mainAxisSpacing: 8,
+                  crossAxisCount: 3,
+                  children: List.generate(20, (index) {
+                    final movie = state.searchResultList[index];
+                    return MainCard(
+                      imageUrl: movie.posterImageUrl,
+                    );
+                  }));
+            },
+          ),
         )
       ],
     );
@@ -33,7 +38,8 @@ class SearchResultWidget extends StatelessWidget {
 }
 
 class MainCard extends StatelessWidget {
-  const MainCard({super.key});
+  final String imageUrl;
+  const MainCard({super.key, required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
