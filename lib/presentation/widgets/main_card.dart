@@ -1,31 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:netflix/core/constants.dart';
 
-import '../../core/constants.dart';
-
-class MainCards extends StatelessWidget {
-  const MainCards({
+class MainCard extends StatelessWidget {
+  final String imageUrl;
+  const MainCard({
     Key? key,
+    required this.imageUrl,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Row(
-        children: [
-          Container(
-            width: 130,
-            height: 240,
-            decoration: BoxDecoration(
-              borderRadius: kradius10,
-              image: const DecorationImage(
-                  fit: BoxFit.cover,
-                  image: NetworkImage(
-                      'https://www.themoviedb.org/t/p/w220_and_h330_face/wawP3mOUeRBrAtnbPwWK5eFaMdV.jpg')),
-            ),
+    return Container(
+      margin:const EdgeInsets.symmetric(horizontal: 5),
+      width: 130,
+      height: 250,
+      decoration: BoxDecoration(
+        borderRadius: kRadius10,
+        image: DecorationImage(
+          fit: BoxFit.cover,
+          image: NetworkImage(
+            imageUrl,
           ),
-          kwidth
-        ],
+        ),
       ),
     );
   }

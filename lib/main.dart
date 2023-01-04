@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix/application/downloads/downloads_bloc.dart';
+import 'package:netflix/application/fast_laugh/fast_laugh_bloc.dart';
+import 'package:netflix/application/home/home_bloc.dart';
+import 'package:netflix/application/hot_and_new/hot_and_new_bloc.dart';
 import 'package:netflix/application/search/search_bloc.dart';
-import 'package:netflix/core/colors/colors.dart';
-import 'package:netflix/presentation/main_page/screen_main_page.dart';
+import 'package:netflix/domain/core/di/injectable.dart';
 
-import 'application/downloads/downloads_bloc.dart';
-import 'domain/di/injectable.dart';
+import 'presentation/main_page/widgets/main_page_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,26 +17,42 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => getIt<DownloadsBloc>()),
-        BlocProvider(create: (context) => getIt<SearchBloc>()),
+        BlocProvider(
+          create: (ctx) => getIt<DownloadsBloc>(),
+        ),
+        BlocProvider(
+          create: (ctx) => getIt<SearchBloc>(),
+        ),
+        BlocProvider(
+          create: (ctx) => getIt<FastLaughBloc>(),
+        ),
+        BlocProvider(
+          create: (ctx) => getIt<HotAndNewBloc>(),
+        ),
+        BlocProvider(
+          create: (ctx) => getIt<HomeBloc>(),
+        ),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Netflix',
         theme: ThemeData(
-            appBarTheme: const AppBarTheme(backgroundColor: Colors.transparent),
-            backgroundColor: Colors.black,
-            scaffoldBackgroundColor: backgroundColor,
+            appBarTheme: AppBarTheme(backgroundColor: Colors.transparent),
+            primarySwatch: Colors.blue,
+            scaffoldBackgroundColor: Colors.black,
+            fontFamily: GoogleFonts.montserrat().fontFamily,
             textTheme: const TextTheme(
-                bodyText1: TextStyle(color: Colors.white),
-                bodyText2: TextStyle(color: Colors.white)),
-            fontFamily: GoogleFonts.montserrat().fontFamily),
-        home: ScreenMainPage(),
+                bodyText1: TextStyle(
+                  color: Colors.white,
+                ),
+                bodyText2: TextStyle(color: Colors.white))),
+        home: SafeArea(child: MainPageScreen()),
       ),
     );
   }

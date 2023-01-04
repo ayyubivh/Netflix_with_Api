@@ -1,34 +1,33 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netflix/application/search/search_bloc.dart';
 import 'package:netflix/core/constants.dart';
 import 'package:netflix/presentation/search/widgets/title.dart';
 
-import '../../../application/search/search_bloc.dart';
-
-class SearchResultWidget extends StatelessWidget {
-  const SearchResultWidget({super.key});
+class SearchResult extends StatelessWidget {
+  const SearchResult({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SearchTextTitle(title: 'Movies & Tv'),
-        kHeight,
+        const SearchTextTItle(title: "Movies & TV"),
+        KHeight,
         Expanded(
           child: BlocBuilder<SearchBloc, SearchState>(
             builder: (context, state) {
               return GridView.count(
-                  shrinkWrap: true,
-                  crossAxisSpacing: 8,
-                  mainAxisSpacing: 8,
-                  crossAxisCount: 3,
-                  children: List.generate(20, (index) {
-                    final movie = state.searchResultList[index];
-                    return MainCard(
-                      imageUrl: movie.posterImageUrl,
-                    );
-                  }));
+                crossAxisCount: 3,
+                mainAxisSpacing: 8,
+                crossAxisSpacing: 8,
+                childAspectRatio: 1 / 1.4,
+                shrinkWrap: true,
+                children: List.generate(20, (index) {
+                  final movie = state.searchResultList[index];
+                  return MainCard(imageUrl: movie.posterImageUrl);
+                }),
+              );
             },
           ),
         )
@@ -45,6 +44,7 @@ class MainCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(7),
           image: DecorationImage(
               image: NetworkImage(imageUrl), fit: BoxFit.cover)),
     );

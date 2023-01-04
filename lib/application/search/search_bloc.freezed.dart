@@ -18,39 +18,39 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$SearchEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initiaLize,
-    required TResult Function(String moviQuery) searchMovies,
+    required TResult Function() initialize,
+    required TResult Function(String movieQuery) searchMovie,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initiaLize,
-    TResult? Function(String moviQuery)? searchMovies,
+    TResult? Function()? initialize,
+    TResult? Function(String movieQuery)? searchMovie,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initiaLize,
-    TResult Function(String moviQuery)? searchMovies,
+    TResult Function()? initialize,
+    TResult Function(String movieQuery)? searchMovie,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitiaLize value) initiaLize,
-    required TResult Function(SearchMovies value) searchMovies,
+    required TResult Function(Initialize value) initialize,
+    required TResult Function(SearchMovie value) searchMovie,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(InitiaLize value)? initiaLize,
-    TResult? Function(SearchMovies value)? searchMovies,
+    TResult? Function(Initialize value)? initialize,
+    TResult? Function(SearchMovie value)? searchMovie,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InitiaLize value)? initiaLize,
-    TResult Function(SearchMovies value)? searchMovies,
+    TResult Function(Initialize value)? initialize,
+    TResult Function(SearchMovie value)? searchMovie,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -75,35 +75,35 @@ class _$SearchEventCopyWithImpl<$Res, $Val extends SearchEvent>
 }
 
 /// @nodoc
-abstract class _$$InitiaLizeCopyWith<$Res> {
-  factory _$$InitiaLizeCopyWith(
-          _$InitiaLize value, $Res Function(_$InitiaLize) then) =
-      __$$InitiaLizeCopyWithImpl<$Res>;
+abstract class _$$InitializeCopyWith<$Res> {
+  factory _$$InitializeCopyWith(
+          _$Initialize value, $Res Function(_$Initialize) then) =
+      __$$InitializeCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitiaLizeCopyWithImpl<$Res>
-    extends _$SearchEventCopyWithImpl<$Res, _$InitiaLize>
-    implements _$$InitiaLizeCopyWith<$Res> {
-  __$$InitiaLizeCopyWithImpl(
-      _$InitiaLize _value, $Res Function(_$InitiaLize) _then)
+class __$$InitializeCopyWithImpl<$Res>
+    extends _$SearchEventCopyWithImpl<$Res, _$Initialize>
+    implements _$$InitializeCopyWith<$Res> {
+  __$$InitializeCopyWithImpl(
+      _$Initialize _value, $Res Function(_$Initialize) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$InitiaLize implements InitiaLize {
-  const _$InitiaLize();
+class _$Initialize implements Initialize {
+  const _$Initialize();
 
   @override
   String toString() {
-    return 'SearchEvent.initiaLize()';
+    return 'SearchEvent.initialize()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitiaLize);
+        (other.runtimeType == runtimeType && other is _$Initialize);
   }
 
   @override
@@ -112,30 +112,30 @@ class _$InitiaLize implements InitiaLize {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initiaLize,
-    required TResult Function(String moviQuery) searchMovies,
+    required TResult Function() initialize,
+    required TResult Function(String movieQuery) searchMovie,
   }) {
-    return initiaLize();
+    return initialize();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initiaLize,
-    TResult? Function(String moviQuery)? searchMovies,
+    TResult? Function()? initialize,
+    TResult? Function(String movieQuery)? searchMovie,
   }) {
-    return initiaLize?.call();
+    return initialize?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initiaLize,
-    TResult Function(String moviQuery)? searchMovies,
+    TResult Function()? initialize,
+    TResult Function(String movieQuery)? searchMovie,
     required TResult orElse(),
   }) {
-    if (initiaLize != null) {
-      return initiaLize();
+    if (initialize != null) {
+      return initialize();
     }
     return orElse();
   }
@@ -143,65 +143,65 @@ class _$InitiaLize implements InitiaLize {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitiaLize value) initiaLize,
-    required TResult Function(SearchMovies value) searchMovies,
+    required TResult Function(Initialize value) initialize,
+    required TResult Function(SearchMovie value) searchMovie,
   }) {
-    return initiaLize(this);
+    return initialize(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(InitiaLize value)? initiaLize,
-    TResult? Function(SearchMovies value)? searchMovies,
+    TResult? Function(Initialize value)? initialize,
+    TResult? Function(SearchMovie value)? searchMovie,
   }) {
-    return initiaLize?.call(this);
+    return initialize?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InitiaLize value)? initiaLize,
-    TResult Function(SearchMovies value)? searchMovies,
+    TResult Function(Initialize value)? initialize,
+    TResult Function(SearchMovie value)? searchMovie,
     required TResult orElse(),
   }) {
-    if (initiaLize != null) {
-      return initiaLize(this);
+    if (initialize != null) {
+      return initialize(this);
     }
     return orElse();
   }
 }
 
-abstract class InitiaLize implements SearchEvent {
-  const factory InitiaLize() = _$InitiaLize;
+abstract class Initialize implements SearchEvent {
+  const factory Initialize() = _$Initialize;
 }
 
 /// @nodoc
-abstract class _$$SearchMoviesCopyWith<$Res> {
-  factory _$$SearchMoviesCopyWith(
-          _$SearchMovies value, $Res Function(_$SearchMovies) then) =
-      __$$SearchMoviesCopyWithImpl<$Res>;
+abstract class _$$SearchMovieCopyWith<$Res> {
+  factory _$$SearchMovieCopyWith(
+          _$SearchMovie value, $Res Function(_$SearchMovie) then) =
+      __$$SearchMovieCopyWithImpl<$Res>;
   @useResult
-  $Res call({String moviQuery});
+  $Res call({String movieQuery});
 }
 
 /// @nodoc
-class __$$SearchMoviesCopyWithImpl<$Res>
-    extends _$SearchEventCopyWithImpl<$Res, _$SearchMovies>
-    implements _$$SearchMoviesCopyWith<$Res> {
-  __$$SearchMoviesCopyWithImpl(
-      _$SearchMovies _value, $Res Function(_$SearchMovies) _then)
+class __$$SearchMovieCopyWithImpl<$Res>
+    extends _$SearchEventCopyWithImpl<$Res, _$SearchMovie>
+    implements _$$SearchMovieCopyWith<$Res> {
+  __$$SearchMovieCopyWithImpl(
+      _$SearchMovie _value, $Res Function(_$SearchMovie) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? moviQuery = null,
+    Object? movieQuery = null,
   }) {
-    return _then(_$SearchMovies(
-      moviQuery: null == moviQuery
-          ? _value.moviQuery
-          : moviQuery // ignore: cast_nullable_to_non_nullable
+    return _then(_$SearchMovie(
+      movieQuery: null == movieQuery
+          ? _value.movieQuery
+          : movieQuery // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -209,62 +209,62 @@ class __$$SearchMoviesCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SearchMovies implements SearchMovies {
-  const _$SearchMovies({required this.moviQuery});
+class _$SearchMovie implements SearchMovie {
+  const _$SearchMovie({required this.movieQuery});
 
   @override
-  final String moviQuery;
+  final String movieQuery;
 
   @override
   String toString() {
-    return 'SearchEvent.searchMovies(moviQuery: $moviQuery)';
+    return 'SearchEvent.searchMovie(movieQuery: $movieQuery)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SearchMovies &&
-            (identical(other.moviQuery, moviQuery) ||
-                other.moviQuery == moviQuery));
+            other is _$SearchMovie &&
+            (identical(other.movieQuery, movieQuery) ||
+                other.movieQuery == movieQuery));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, moviQuery);
+  int get hashCode => Object.hash(runtimeType, movieQuery);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SearchMoviesCopyWith<_$SearchMovies> get copyWith =>
-      __$$SearchMoviesCopyWithImpl<_$SearchMovies>(this, _$identity);
+  _$$SearchMovieCopyWith<_$SearchMovie> get copyWith =>
+      __$$SearchMovieCopyWithImpl<_$SearchMovie>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initiaLize,
-    required TResult Function(String moviQuery) searchMovies,
+    required TResult Function() initialize,
+    required TResult Function(String movieQuery) searchMovie,
   }) {
-    return searchMovies(moviQuery);
+    return searchMovie(movieQuery);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initiaLize,
-    TResult? Function(String moviQuery)? searchMovies,
+    TResult? Function()? initialize,
+    TResult? Function(String movieQuery)? searchMovie,
   }) {
-    return searchMovies?.call(moviQuery);
+    return searchMovie?.call(movieQuery);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initiaLize,
-    TResult Function(String moviQuery)? searchMovies,
+    TResult Function()? initialize,
+    TResult Function(String movieQuery)? searchMovie,
     required TResult orElse(),
   }) {
-    if (searchMovies != null) {
-      return searchMovies(moviQuery);
+    if (searchMovie != null) {
+      return searchMovie(movieQuery);
     }
     return orElse();
   }
@@ -272,42 +272,41 @@ class _$SearchMovies implements SearchMovies {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitiaLize value) initiaLize,
-    required TResult Function(SearchMovies value) searchMovies,
+    required TResult Function(Initialize value) initialize,
+    required TResult Function(SearchMovie value) searchMovie,
   }) {
-    return searchMovies(this);
+    return searchMovie(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(InitiaLize value)? initiaLize,
-    TResult? Function(SearchMovies value)? searchMovies,
+    TResult? Function(Initialize value)? initialize,
+    TResult? Function(SearchMovie value)? searchMovie,
   }) {
-    return searchMovies?.call(this);
+    return searchMovie?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InitiaLize value)? initiaLize,
-    TResult Function(SearchMovies value)? searchMovies,
+    TResult Function(Initialize value)? initialize,
+    TResult Function(SearchMovie value)? searchMovie,
     required TResult orElse(),
   }) {
-    if (searchMovies != null) {
-      return searchMovies(this);
+    if (searchMovie != null) {
+      return searchMovie(this);
     }
     return orElse();
   }
 }
 
-abstract class SearchMovies implements SearchEvent {
-  const factory SearchMovies({required final String moviQuery}) =
-      _$SearchMovies;
+abstract class SearchMovie implements SearchEvent {
+  const factory SearchMovie({required final String movieQuery}) = _$SearchMovie;
 
-  String get moviQuery;
+  String get movieQuery;
   @JsonKey(ignore: true)
-  _$$SearchMoviesCopyWith<_$SearchMovies> get copyWith =>
+  _$$SearchMovieCopyWith<_$SearchMovie> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

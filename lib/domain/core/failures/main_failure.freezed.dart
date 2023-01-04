@@ -19,38 +19,38 @@ mixin _$MainFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() clientFailure,
-    required TResult Function() serverFailure,
+    required TResult Function() serverFailiure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? clientFailure,
-    TResult? Function()? serverFailure,
+    TResult? Function()? serverFailiure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? clientFailure,
-    TResult Function()? serverFailure,
+    TResult Function()? serverFailiure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ClientFailure value) clientFailure,
-    required TResult Function(_ServerFailure value) serverFailure,
+    required TResult Function(_ServerFailiure value) serverFailiure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ClientFailure value)? clientFailure,
-    TResult? Function(_ServerFailure value)? serverFailure,
+    TResult? Function(_ServerFailiure value)? serverFailiure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ClientFailure value)? clientFailure,
-    TResult Function(_ServerFailure value)? serverFailure,
+    TResult Function(_ServerFailiure value)? serverFailiure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,7 +113,7 @@ class _$_ClientFailure implements _ClientFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() clientFailure,
-    required TResult Function() serverFailure,
+    required TResult Function() serverFailiure,
   }) {
     return clientFailure();
   }
@@ -122,7 +122,7 @@ class _$_ClientFailure implements _ClientFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? clientFailure,
-    TResult? Function()? serverFailure,
+    TResult? Function()? serverFailiure,
   }) {
     return clientFailure?.call();
   }
@@ -131,7 +131,7 @@ class _$_ClientFailure implements _ClientFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? clientFailure,
-    TResult Function()? serverFailure,
+    TResult Function()? serverFailiure,
     required TResult orElse(),
   }) {
     if (clientFailure != null) {
@@ -144,7 +144,7 @@ class _$_ClientFailure implements _ClientFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ClientFailure value) clientFailure,
-    required TResult Function(_ServerFailure value) serverFailure,
+    required TResult Function(_ServerFailiure value) serverFailiure,
   }) {
     return clientFailure(this);
   }
@@ -153,7 +153,7 @@ class _$_ClientFailure implements _ClientFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ClientFailure value)? clientFailure,
-    TResult? Function(_ServerFailure value)? serverFailure,
+    TResult? Function(_ServerFailiure value)? serverFailiure,
   }) {
     return clientFailure?.call(this);
   }
@@ -162,7 +162,7 @@ class _$_ClientFailure implements _ClientFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ClientFailure value)? clientFailure,
-    TResult Function(_ServerFailure value)? serverFailure,
+    TResult Function(_ServerFailiure value)? serverFailiure,
     required TResult orElse(),
   }) {
     if (clientFailure != null) {
@@ -177,35 +177,35 @@ abstract class _ClientFailure implements MainFailure {
 }
 
 /// @nodoc
-abstract class _$$_ServerFailureCopyWith<$Res> {
-  factory _$$_ServerFailureCopyWith(
-          _$_ServerFailure value, $Res Function(_$_ServerFailure) then) =
-      __$$_ServerFailureCopyWithImpl<$Res>;
+abstract class _$$_ServerFailiureCopyWith<$Res> {
+  factory _$$_ServerFailiureCopyWith(
+          _$_ServerFailiure value, $Res Function(_$_ServerFailiure) then) =
+      __$$_ServerFailiureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ServerFailureCopyWithImpl<$Res>
-    extends _$MainFailureCopyWithImpl<$Res, _$_ServerFailure>
-    implements _$$_ServerFailureCopyWith<$Res> {
-  __$$_ServerFailureCopyWithImpl(
-      _$_ServerFailure _value, $Res Function(_$_ServerFailure) _then)
+class __$$_ServerFailiureCopyWithImpl<$Res>
+    extends _$MainFailureCopyWithImpl<$Res, _$_ServerFailiure>
+    implements _$$_ServerFailiureCopyWith<$Res> {
+  __$$_ServerFailiureCopyWithImpl(
+      _$_ServerFailiure _value, $Res Function(_$_ServerFailiure) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ServerFailure implements _ServerFailure {
-  const _$_ServerFailure();
+class _$_ServerFailiure implements _ServerFailiure {
+  const _$_ServerFailiure();
 
   @override
   String toString() {
-    return 'MainFailure.serverFailure()';
+    return 'MainFailure.serverFailiure()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_ServerFailure);
+        (other.runtimeType == runtimeType && other is _$_ServerFailiure);
   }
 
   @override
@@ -215,29 +215,29 @@ class _$_ServerFailure implements _ServerFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() clientFailure,
-    required TResult Function() serverFailure,
+    required TResult Function() serverFailiure,
   }) {
-    return serverFailure();
+    return serverFailiure();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? clientFailure,
-    TResult? Function()? serverFailure,
+    TResult? Function()? serverFailiure,
   }) {
-    return serverFailure?.call();
+    return serverFailiure?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? clientFailure,
-    TResult Function()? serverFailure,
+    TResult Function()? serverFailiure,
     required TResult orElse(),
   }) {
-    if (serverFailure != null) {
-      return serverFailure();
+    if (serverFailiure != null) {
+      return serverFailiure();
     }
     return orElse();
   }
@@ -246,34 +246,34 @@ class _$_ServerFailure implements _ServerFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ClientFailure value) clientFailure,
-    required TResult Function(_ServerFailure value) serverFailure,
+    required TResult Function(_ServerFailiure value) serverFailiure,
   }) {
-    return serverFailure(this);
+    return serverFailiure(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ClientFailure value)? clientFailure,
-    TResult? Function(_ServerFailure value)? serverFailure,
+    TResult? Function(_ServerFailiure value)? serverFailiure,
   }) {
-    return serverFailure?.call(this);
+    return serverFailiure?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ClientFailure value)? clientFailure,
-    TResult Function(_ServerFailure value)? serverFailure,
+    TResult Function(_ServerFailiure value)? serverFailiure,
     required TResult orElse(),
   }) {
-    if (serverFailure != null) {
-      return serverFailure(this);
+    if (serverFailiure != null) {
+      return serverFailiure(this);
     }
     return orElse();
   }
 }
 
-abstract class _ServerFailure implements MainFailure {
-  const factory _ServerFailure() = _$_ServerFailure;
+abstract class _ServerFailiure implements MainFailure {
+  const factory _ServerFailiure() = _$_ServerFailiure;
 }
